@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-image: url(https://media.istockphoto.com/id/1330248664/vector/hexagonal-and-rectangular-abstracts-with-a-digital-network-image-blue-gradient-background.jpg?s=612x612&w=0&k=20&c=JgeKAVSAO_S-A0r61OP99BqNduP0CXE7gvc0jjoAD4Q=);
+            background-size: cover;
+        }
+     .main{
+        border: 2px solid black;
+        width: 350px;
+        height: 350px;
+        background-color: rgb(11, 11, 12);
+        margin: 30%;
+        margin-top: 10%; 
+        margin-left: 40%;
+        border-radius: 20px;
+       }
+       #scr{
+         height: 50px;
+         width: 320px;
+         margin: 10px;
+         margin-top: 20px;
+         font-size: 30px;
+         border-radius: 20px;
+         background-color: aliceblue;
+         color: black;
+       }
+    .value {
+        width: 125px;
+        padding: 10px;
+        margin: 5px;
+     }
+     button{
+      outline: none;
+      border: 2px solid white ;
+      border-radius: 20px;
+        padding: 10px;
+        margin: 5px;
+        margin-left: 20px;
+        width: 50px;
+        text-align: center;
+        cursor: pointer;
+     }
+     button:hover{
+      background-color: blue;
+      color: white;
+      border-color: blue;
+     }
+     .esc,  .esc:hover{
+        background-color: red;
+        border-color:red ;
+
+     }
+   
+     .answer{
+        background-color: rgb(24, 56, 24);
+     }
+     h1{
+        color: rgb(255, 0, 255);
+        text-decoration: underline;
+        font-size: 50px;
+        text-align: center;
+     }
+    
+     
+     
+    </style>
+</head>
+<body>
+   
+  <h1>SIMPLE ARITHMETIC CALCULATOR</h1>
+     <div class="main">
+        <div class="scn">
+            <input type="text" name="screen" onclick="display(a)" disabled placeholder="0" id="scr">
+        </div>
+        
+        <center><button onclick="clearScreen()" id="sev" class="esc">C</button><br></center>
+            <button onclick="display('7')" id="sev">7</button>
+             <button onclick="display('8')"id="sev">8</button>
+             <button onclick="display('9')"id="sev">9</button>
+             <button onclick="display('*')">x</button><br>
+            <button onclick="display('4')"id="sev">4</button>
+            <button onclick="display('5')"id="sev">5</button>
+            <button onclick="display('6')"id="sev">6</button>
+            <button onclick="display('/')"id="sev">÷</button>
+            <button onclick="display('1')"id="sev">1</button>
+            <button onclick="display('2')"id="sev">2</button>
+            <button onclick="display('3')"id="sev">3</button>
+            <button onclick="display('-')">-</button><br>
+            <button onclick="display('0')">0</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="calculate()" class="answer">=</button>
+            <button onclick="display('+')" id="sev">+</button>  
+      
+<script>
+   
+   
+    let expression = '';
+
+    function display(value) {
+        expression += value;
+        document.getElementById("scr").value = expression;
+    }
+
+    function calculate() {
+        let result = eval(expression);
+        document.getElementById("scr").value = result;
+        expression = result;
+    }
+
+    function clearScreen() {
+        expression = '';
+        document.getElementById("scr").value = '';
+    }
+</script>
+
+
+       
+    
+</body>
+</html>
